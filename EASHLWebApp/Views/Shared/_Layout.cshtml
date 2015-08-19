@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Bombers Hockey</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </meta>
+    </meta>
+    </meta>
+</head>
+<body>
+    <div class='container'>
+        <div class='container-fluid'>
+            <nav class='navbar navbar-default' role='navigation'>
+                <a href='/posts'>
+                    <img class='img-responsive' src='/assets/header.png'>
+                </a>
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class='navbar-header nav-filler b_navigation'>
+                    <button class='navbar-toggle' data-target='#bs-example-navbar-collapse-1' data-toggle='collapse' type='button'>
+                        <span class='sr-only'>Toggle navigation</span>
+                        <span class='icon-bar'></span>
+                        <span class='icon-bar'></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class='collapse navbar-collapse nav-filler b_navigation' id='bs-example-navbar-collapse-1'>
+                    <ul class='nav navbar-nav'>
+                        <li>
+                            <a class='nav-homepage' href='/posts'>
+                                <img src='/assets/NAV2/home_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-lineup' href='/players'>
+                                <img src='/assets/NAV2/lineup_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-stats' href='/statistics'>
+                                <img src='/assets/NAV2/stats_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-media' href='/medias'>
+                                <img src='/assets/NAV2/media_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-info' href='/infos'>
+                                <img src='/assets/NAV2/clubinfo_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-results' href='/matches'>
+                                <img src='/assets/NAV2/results_hover.png'>
+                            </a>
+                        </li>
+                        <li class='dropdown'>
+                            <a class='nav-links dropdown-toggle' data-toggle='dropdown' href='#'>
+                                <img src='/assets/NAV2/links_hover.png'>
+                            </a>
+                            <ul class='dropdown-menu'>
+                                <li class='list-group-item'>
+                                    <a href='http://www.nhl.com'>NHL.com</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://consolehockey.com'>ConsoleHockey</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://www.easports.com/nhl15'>EA Sports NHL15</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://youtube.com/2bcproductions'>2bcproductions</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://synergyhockey.wordpress.com/tag/eashl/'>Synery hockey</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://ramjagsinghluktarcurry.blogg.se'>Jesus blogg</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://www.operationsports.se'>Operation Sports</a>
+                                </li>
+                                <li class='list-group-item'>
+                                    <a href='http://shl.se'>SHL</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class='nav-forum' href='/forum'>
+                                <img src='/assets/NAV2/forum_hover.png'>
+                            </a>
+                        </li>
+                        <li>
+                            <a class='nav-code' href='/codes'>
+                                <img src='/assets/NAV2/code_hover.png'>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div aria-hidden='true' aria-labeledby='myModal' class='modal fade' id='myModal' role='dialog'>
+        </div>
+        <div class='col-lg-6 col-md-8 b_img-responsive col-lg-push-3 b_bottom-padding'>
+            <div class='b_main_content'>
+                <div class='b_box'>
+                    @RenderBody();
+                </div>
+            </div>
+        </div>
+        <div class='col-lg-3 b_column col-lg-pull-6 col-md-4 col-sm-6 col-xs-12'>
+            <div class='b_box'>
+            </div>
+        </div>
+        <div class='col-lg-3 b_column col-md-4 col-sm-6 col-xs-12'>
+            <div class='b_box'>
+            </div>
+        </div>
+        <div class='col-lg-3 col-lg-pull-6 col-md-4 b_column col-sm-6 col-xs-12'>
+            <div class='b_box'>
+                <div class='b_header'>
+                    <img src='/assets/calendar.png'>
+                </div>
+                <div id='sssScheduleTeamCal_json'></div>
+                <div id='calendar'></div>
+            </div>
+        </div>
+        <div class='col-lg-3 col-md-4 b_column col-sm-6 col-xs-12' id='tweets'></div>
+        <div class='col-lg-3 col-md-4 col-lg-pull-6 b_column col-sm-6 col-xs-12'>
+            <div class='b_box'>
+                <div id='b_stream'></div>
+            </div>
+        </div>
+        <div class='col-lg-3 col-md-4 b_column col-sm-6 col-xs-12'>
+            <div id='shouts'></div>
+        </div>
+        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 b_footer'>
+            <div class='b_box'>
+                <div class='col-lg-6 col-md-8 col-sm-12'>
+                    <img src='/assets/EA_sports.jpg' width='100'>
+                    <img src='/assets/AWS-900x900.png' width='56'>
+                    <img src='/assets/postgresql.jpg' width='56'>
+                    <img src='/assets/Ruby-on-Rails4.jpg' width='170'>
+                    <img src='/assets/twitter-bootstrap.jpg' width='100'>
+                </div>
+                <div class='col-lg-6 col-lg-push-0 col-md8 col-md-push-2 col-sm-12'>
+                    <div class='col-lg-4 col-md-3 col-sm-6'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>
+                                <h3 class='panel-title'>
+                                    Idea, ruby, cljs and css code
+                                </h3>
+                            </div>
+                            <div class='panel-body'>
+                                Andreas "Sork Pippi" Ã–stlund
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 col-lg-push-0 col-md-3 col-md-push-1 col-sm-6'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>
+                                <h3 class='panel-title'>
+                                    Idea, design and graphics
+                                </h3>
+                            </div>
+                            <div class='panel-body'>
+                                Mattias "Dexrion" Nilsson
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 col-lg-push-0 col-md-3 col-md-push-1 col-sm-6'>
+                        <div class='panel panel-default'>
+                            <div class='panel-heading'>
+                                <h3 class='panel-title'>
+                                    Graphics
+                                </h3>
+                            </div>
+                            <div class='panel-body'>
+                                Nick "ZHiTNiK" Lega
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br class='b_clear'>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src='http://www.nhl.com/nhl/js/_jslib-plugins.min.js?v=8.41'></script>
+        <script src='http://www.nhl.com/js/_club-plugins.min.js?v=8.41'></script>
+        <script>
+        bkLib.onDomLoaded(function() {
+          try {
+            new nicEditor({fullPanel : true}).panelInstance('media_text');
+          }
+          catch(e) {}
+          try {
+            new nicEditor({fullPanel : true}).panelInstance('post_text');
+          }
+          catch(e) {}
+          try {
+            new nicEditor({fullPanel : true}).panelInstance('info_text');
+          }
+          catch(e) {}
+          try {
+            new nicEditor({fullPanel : true}).panelInstance('code_text');
+          }
+          catch(e) {}
+        });
+        </script>
+        <script>
+        $(document).ready(function() {
+          var pingAfter = 60000;
+          var refreshId = setInterval(function() {
+            $("#status").load('/online/status');
+          }, pingAfter);
+        });
+        </script>
+        <script>
+        $(document).ready(function(){
+          console.log("loaded");
+          $('.row li img').on('click',function(){
+            console.log("click");
+            var src = $(this).attr('src');
+            console.log(src.search('test'));
+            if(src.search('youtube') != -1){
+              src = src.replace('img.youtube.com/vi', 'www.youtube.com/embed').replace('/0.jpg', '');
+              var img = '<iframe src="' + src + '" width="560" height="315"/>';
+            } else {
+              var img = '<img src="' + src + '"/>';
+            }
+            $('#gModal').modal();
+            $('#gModal').on('shown.bs.modal', function(){
+              $('#gModal .modal-body').html(img);
+            });
+            $('#gModal').on('hidden.bs.modal', function(){
+              $('#gModal .modal-body').html('');
+            });
+          });
+        });
+        </script>
+        <script>
+        var sssScheduleTeamCal_String = '{}';
+        var sssScheduleTeamCal = jQuery.parseJSON(sssScheduleTeamCal_String);
+        </script>
+        <script>
+        jQuery(document).ready(function(){
+
+          jQuery("#calendar").datepicker({
+
+            dayContentJson : sssScheduleTeamCal,
+
+            beforeShowDay: function(date) {
+              var simpleDate=(date.getMonth()+1)+"/"+date.getDate()+"/"+(date.getFullYear());
+              console.log(simpleDate);
+              if (sssScheduleTeamCal.hasOwnProperty(simpleDate)) {
+                return [true, "", simpleDate];
+              }
+              return [false, "", ""];
+            },
+            onChangeMonthYear : function(year, month, inst) {
+              if(sssScheduleTeamCal) {
+                var simpleDate=(month+"/01/"+year);
+                jQuery.ajaxSetup({ async: false });
+                jQuery("#sssScheduleTeamCal_json").load("/schedules");
+                jQuery.ajaxSetup({ async: true });
+                //TODO: oooh, maybe i set this property a more friendly way
+                inst.settings.dayContentJson=sssScheduleTeamCal;
+              }
+            },
+
+            onSelect: function(dateText, inst) {
+
+              var fullDate=jQuery.datepicker.parseDate('mm/dd/yy', dateText);
+              var simpleDate = (fullDate.getMonth()+1)+"/"+fullDate.getDate()+"/"+fullDate.getFullYear();
+              //jQuery.post("http://bruins.nhl.com/club/TeamCalendarDetailPage.htm?jsonVarName=sssScheduleTeamCal&id="+sssScheduleTeamCal[simpleDate].id, {}, function(data) { jQuery('#basicModalContent').html(data); }, 'html');
+              jQuery('#basicModalContent').modal();
+            }
+
+          });
+          jQuery("#sssScheduleTeamCal_calendar").find(".ui-state-hover").each(function() {
+            jQuery(this).removeClass('ui-state-hover');
+          });
+        });
+        </script>
+    </div>
+</body>
+</html>

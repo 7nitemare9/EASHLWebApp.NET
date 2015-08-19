@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4E4685F-7151-4AA4-8E08-52217D44870B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EASHLWebApp</RootNamespace>
+    <AssemblyName>EASHLWebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508161821098_InitialCreate.cs" />
+    <Compile Include="Migrations\201508161821098_InitialCreate.Designer.cs">
+      <DependentUpon>201508161821098_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508171413322_initial.cs" />
+    <Compile Include="Migrations\201508171413322_initial.Designer.cs">
+      <DependentUpon>201508171413322_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508180853098_changed_post_model.cs" />
+    <Compile Include="Migrations\201508180853098_changed_post_model.Designer.cs">
+      <DependentUpon>201508180853098_changed_post_model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EASHLWebAppContext.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\player.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\0.jpg" />
+    <Content Include="assets\13.jpg" />
+    <Content Include="assets\13tammi.jpg" />
+    <Content Include="assets\24.jpg" />
+    <Content Include="assets\42.jpg" />
+    <Content Include="assets\42ute.jpg" />
+    <Content Include="assets\50.jpg" />
+    <Content Include="assets\55.jpg" />
+    <Content Include="assets\71.jpg" />
+    <Content Include="assets\8.jpg" />
+    <Content Include="assets\91.jpg" />
+    <Content Include="assets\91.png" />
+    <Content Include="assets\93.jpg" />
+    <Content Include="assets\96.jpg" />
+    <Content Include="assets\about.jpg" />
+    <Content Include="assets\admin.png" />
+    <Content Include="assets\andreasfoto.jpg" />
+    <Content Include="assets\andreasifoto.jpg" />
+    <Content Include="assets\approved.png" />
+    <Content Include="assets\assists.png" />
+    <Content Include="assets\AWS-900x900.png" />
+    <Content Include="assets\background.jpg" />
+    <Content Include="assets\background.png" />
+    <Content Include="assets\background2.png" />
+    <Content Include="assets\backstatsbg.jpg" />
+    <Content Include="assets\banner.jpg" />
+    <Content Include="assets\Banner13.png" />
+    <Content Include="assets\banner2.jpg" />
+    <Content Include="assets\banner3.jpg" />
+    <Content Include="assets\Bannerv2.jpg" />
+    <Content Include="assets\Best defender.png" />
+    <Content Include="assets\bestteam.png" />
+    <Content Include="assets\bg_contentwrapper.jpg" />
+    <Content Include="assets\bg_contentwrapper2.jpg" />
+    <Content Include="assets\blank.jpg" />
+    <Content Include="assets\bombers logo.png" />
+    <Content Include="assets\Bombers Wallpaper.png" />
+    <Content Include="assets\BombersLogo.png" />
+    <Content Include="assets\bSlKHVn.png" />
+    <Content Include="assets\captains.png" />
+    <Content Include="assets\christianfoto.jpg" />
+    <Content Include="assets\consolehockey1.jpg" />
+    <Content Include="assets\contacts.jpg" />
+    <Content Include="assets\copyright.jpg" />
+    <Content Include="assets\defender.png" />
+    <Content Include="assets\defensemen.jpg" />
+    <Content Include="assets\defensemenbg.png" />
+    <Content Include="assets\down.png" />
+    <Content Include="assets\EA_sports.jpg" />
+    <Content Include="assets\ehlbg1.jpg" />
+    <Content Include="assets\ehlbg2.jpg" />
+    <Content Include="assets\EHLinfo.jpg" />
+    <Content Include="assets\EHLmatcher.png" />
+    <Content Include="assets\EHLstats.png" />
+    <Content Include="assets\facebook.jpg" />
+    <Content Include="assets\facebook_ej.jpg" />
+    <Content Include="assets\favicon.jpg" />
+    <Content Include="assets\favicon.png" />
+    <Content Include="assets\field.gif" />
+    <Content Include="assets\Finland-Flag.jpg" />
+    <Content Include="assets\footer_bg.gif" />
+    <Content Include="assets\footer_bg.jpg" />
+    <Content Include="assets\footer_l.gif" />
+    <Content Include="assets\footer_r.gif" />
+    <Content Include="assets\forslag.png" />
+    <Content Include="assets\forum.jpg" />
+    <Content Include="assets\forumposts.jpg" />
+    <Content Include="assets\forwards.jpg" />
+    <Content Include="assets\forwardsbg.png" />
+    <Content Include="assets\fotomall.jpg" />
+    <Content Include="assets\fwstatsbg.jpg" />
+    <Content Include="assets\goalie.jpg" />
+    <Content Include="assets\Goaliebg.png" />
+    <Content Include="assets\goaliestats.png" />
+    <Content Include="assets\Goals.png" />
+    <Content Include="assets\header.png" />
+    <Content Include="assets\head_bg.jpg" />
+    <Content Include="assets\head_end.jpg" />
+    <Content Include="assets\hockeykortmall.png" />
+    <Content Include="assets\ice.jpg" />
+    <Content Include="assets\jersey.png" />
+    <Content Include="assets\jollboll.jpg" />
+    <Content Include="assets\latest matches.jpg" />
+    <Content Include="assets\lead.gif" />
+    <Content Include="assets\lineup.jpg" />
+    <Content Include="assets\lineupbg.jpg" />
+    <Content Include="assets\lineupbg.png" />
+    <Content Include="assets\litenlogga.jpg" />
+    <Content Include="assets\livescore.jpg" />
+    <Content Include="assets\livestream.jpg" />
+    <Content Include="assets\login.gif" />
+    <Content Include="assets\login_bg.png" />
+    <Content Include="assets\logo.png" />
+    <Content Include="assets\loss.gif" />
+    <Content Include="assets\mackan.jpg" />
+    <Content Include="assets\magnusfoto.jpg" />
+    <Content Include="assets\main.gif" />
+    <Content Include="assets\Malvakt.png" />
+    <Content Include="assets\management.png" />
+    <Content Include="assets\martinfoto.jpg" />
+    <Content Include="assets\match.php" />
+    <Content Include="assets\matchbg.png" />
+    <Content Include="assets\matches.gif" />
+    <Content Include="assets\msnlogo.jpg" />
+    <Content Include="assets\msnlogo_ej.jpg" />
+    <Content Include="assets\mvstatsbg.jpg" />
+    <Content Include="assets\nav_bg.gif" />
+    <Content Include="assets\nav_bg.jpg" />
+    <Content Include="assets\nav_l.gif" />
+    <Content Include="assets\nav_r.gif" />
+    <Content Include="assets\news.gif" />
+    <Content Include="assets\news.jpg" />
+    <Content Include="assets\newsbg.png" />
+    <Content Include="assets\news_hover.jpg" />
+    <Content Include="assets\NHL.jpg" />
+    <Content Include="assets\NHL1.jpg" />
+    <Content Include="assets\NHLnews.jpg" />
+    <Content Include="assets\nilsson.jpg" />
+    <Content Include="assets\nilsson.php" />
+    <Content Include="assets\Nilsson.png" />
+    <Content Include="assets\nizzefoto.jpg" />
+    <Content Include="assets\Nizziano.png" />
+    <Content Include="assets\nofoto.png" />
+    <Content Include="assets\off.gif" />
+    <Content Include="assets\olzarfoto.jpg" />
+    <Content Include="assets\on.gif" />
+    <Content Include="assets\onlinestatus.jpg" />
+    <Content Include="assets\onlinestatus.png" />
+    <Content Include="assets\ostlund.jpg" />
+    <Content Include="assets\ostlund.png" />
+    <Content Include="assets\ourvision.jpg" />
+    <Content Include="assets\playerbiobg.png" />
+    <Content Include="assets\playervideo.png" />
+    <Content Include="assets\PLUSMINUS.png" />
+    <Content Include="assets\points.png" />
+    <Content Include="assets\postgresql.jpg" />
+    <Content Include="assets\post_b.gif" />
+    <Content Include="assets\post_bg.gif" />
+    <Content Include="assets\post_h.png" />
+    <Content Include="assets\post_t.gif" />
+    <Content Include="assets\pp.jpg" />
+    <Content Include="assets\rails.png" />
+    <Content Include="assets\rank.jpg" />
+    <Content Include="assets\rank.png" />
+    <Content Include="assets\recap.jpg" />
+    <Content Include="assets\recent.gif" />
+    <Content Include="assets\register.gif" />
+    <Content Include="assets\results.jpg" />
+    <Content Include="assets\Ruby-on-Rails4.jpg" />
+    <Content Include="assets\seperator.jpg" />
+    <Content Include="assets\servers.gif" />
+    <Content Include="assets\shout.jpg" />
+    <Content Include="assets\shout.png" />
+    <Content Include="assets\side_li.gif" />
+    <Content Include="assets\Snallast.png" />
+    <Content Include="assets\snittpermatchbg.jpg" />
+    <Content Include="assets\Sork Pippi.png" />
+    <Content Include="assets\sorkfoto.jpg" />
+    <Content Include="assets\sponsors.gif" />
+    <Content Include="assets\Statisticscareer.png" />
+    <Content Include="assets\Statisticscareerpergame.png" />
+    <Content Include="assets\stats.gif" />
+    <Content Include="assets\swedenflaglineup.png" />
+    <Content Include="assets\taanifoto.jpg" />
+    <Content Include="assets\team.html" />
+    <Content Include="assets\Teamlineup.jpg" />
+    <Content Include="assets\teammedia.jpg" />
+    <Content Include="assets\teamnews.jpg" />
+    <Content Include="assets\teamnews.png" />
+    <Content Include="assets\teamresults.jpg" />
+    <Content Include="assets\teamrosterbg.jpg" />
+    <Content Include="assets\teamstats.jpg" />
+    <Content Include="assets\test.jpg" />
+    <Content Include="assets\test.png" />
+    <Content Include="assets\test1.png" />
+    <Content Include="assets\testheader.png" />
+    <Content Include="assets\tickerbg.png" />
+    <Content Include="assets\tie.gif" />
+    <Content Include="assets\TmR.jpg" />
+    <Content Include="assets\tmrlogo.jpg" />
+    <Content Include="assets\tmrlogo.png" />
+    <Content Include="assets\toni.jpg" />
+    <Content Include="assets\toonka.png" />
+    <Content Include="assets\toonkafoto.png" />
+    <Content Include="assets\topic.gif" />
+    <Content Include="assets\Topscorer.png" />
+    <Content Include="assets\totaltiklubben.jpg" />
+    <Content Include="assets\tryout.jpg" />
+    <Content Include="assets\TwitchBG.png" />
+    <Content Include="assets\twitter-bootstrap.jpg" />
+    <Content Include="assets\twitter.jpg" />
+    <Content Include="assets\Untitled-7.jpg" />
+    <Content Include="assets\up.png" />
+    <Content Include="assets\UTVISNINGAR.png" />
+    <Content Include="assets\vakant.jpg" />
+    <Content Include="assets\videos.jpg" />
+    <Content Include="assets\vinstbg.jpg" />
+    <Content Include="assets\win.gif" />
+    <Content Include="assets\Xbox live.png" />
+    <Content Include="assets\xbox.jpg" />
+    <Content Include="assets\xboxlive.png" />
+    <Content Include="assets\zhitnik.jpg" />
+    <Content Include="Content\application.css" />
+    <Content Include="Content\bombers.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bombers.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\hockeykortmall1.psd" />
+    <Content Include="assets\HOCKEYMALLEN.psd" />
+    <Content Include="assets\NHLnews.psd" />
+    <Content Include="assets\Nyhetsmall.psd" />
+    <Content Include="Content\players.css" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Posts\Create.cshtml" />
+    <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Posts\Edit.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201508161821098_InitialCreate.resx">
+      <DependentUpon>201508161821098_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508171413322_initial.resx">
+      <DependentUpon>201508171413322_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508180853098_changed_post_model.resx">
+      <DependentUpon>201508180853098_changed_post_model.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65149</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65149/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

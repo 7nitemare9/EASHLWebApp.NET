@@ -1,0 +1,115 @@
+﻿@model IEnumerable<EASHLWebApp.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="content">
+    <p>
+        <img src="/assets/blank.jpg" width="100%" />
+        <p2>LINEUP</p2>
+    </p>
+</div>
+<br />
+<div class="titlecard">Forwards</div>
+<table>
+    <thead>
+        <tr class="team_head">
+            <th class="cr">Gamertag</th>
+            <th class="cr">Name</th>
+            <th class="cr">Number</th>
+            <th class="cr">Position</th>
+            <th class="cr">Country</th>
+            <th class="cr">City</th>
+            <th class="cr">Age</th>
+            <th class="cr">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model.Where(n => n.Position != "Defense" && n.Position != "Goaltender")) {
+        <tr>
+            <td class="cr">@Html.DisplayFor(Model => player.Gamertag)</td>
+            <td class="cr">@Html.DisplayFor(Model => player.Name)</td>
+            <td class="cr">@Html.DisplayFor(Model => player.Number)</td>
+            <td class="cr">@Html.DisplayFor(Model => player.Position)</td>
+            <td class="cr">
+                <img src="assets/swedenflaglineup.png" style="min-width: 0%" width="26" />
+            </td>
+            <td class="cr">@Html.DisplayFor(Model => player.City)</td>
+            <td class="cr">@Html.DisplayFor(Model => player.Age)</td>
+            <td class="cr">
+               @Html.ActionLink("info", "details", new { id = player.PlayerID })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="titlecard">Defenders</div>
+<table>
+    <thead>
+        <tr class="team_head">
+            <th class="cr">Gamertag</th>
+            <th class="cr">Name</th>
+            <th class="cr">Number</th>
+            <th class="cr">Position</th>
+            <th class="cr">Country</th>
+            <th class="cr">City</th>
+            <th class="cr">Age</th>
+            <th class="cr">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model.Where(n => n.Position == "Defense"))
+        {
+            <tr>
+                <td class="cr">@Html.DisplayFor(Model => player.Gamertag)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Name)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Number)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Position)</td>
+                <td class="cr">
+                    <img src="assets/swedenflaglineup.png" style="min-width: 0%" width="26" />
+                </td>
+                <td class="cr">@Html.DisplayFor(Model => player.City)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Age)</td>
+                <td class="cr">
+                    @Html.ActionLink("info", "details", new { id = player.PlayerID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div class="titlecard">Goalies</div>
+<table>
+    <thead>
+        <tr class="team_head">
+            <th class="cr">Gamertag</th>
+            <th class="cr">Name</th>
+            <th class="cr">Number</th>
+            <th class="cr">Position</th>
+            <th class="cr">Country</th>
+            <th class="cr">City</th>
+            <th class="cr">Age</th>
+            <th class="cr">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var player in Model.Where(n => n.Position == "Goaltender"))
+        {
+            <tr>
+                <td class="cr">@Html.DisplayFor(Model => player.Gamertag)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Name)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Number)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Position)</td>
+                <td class="cr">
+                    <img src="assets/swedenflaglineup.png" style="min-width: 0%" width="26" />
+                </td>
+                <td class="cr">@Html.DisplayFor(Model => player.City)</td>
+                <td class="cr">@Html.DisplayFor(Model => player.Age)</td>
+                <td class="cr">
+                    @Html.ActionLink("info", "details", new { id = player.PlayerID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
