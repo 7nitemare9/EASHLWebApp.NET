@@ -13,12 +13,13 @@ namespace EASHLWebApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Posts",
-                url: "Posts/{id}",
-                defaults: new { controller = "Posts", action = "Details" },
-                constraints: new {id = @"\d+"}
-                );
+            //routes.MapRoute(
+            //    name: "Posts",
+            //    url: "Posts/{id}",
+            //    defaults: new { controller = "Posts", action = "Details" },
+            //    constraints: new {id = @"\d+"}
+            //    );
+            routes.MapMvcAttributeRoutes();
 
             routes.MapRoute(
                 name: "Default",

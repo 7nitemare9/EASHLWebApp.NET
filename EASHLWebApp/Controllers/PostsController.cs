@@ -21,6 +21,7 @@ namespace EASHLWebApp.Controllers
         {
             return View(db.Posts.ToList());
         }
+        [Route("Posts.json")]
         public ActionResult JsonData()
         {
             var posts = db.Posts.ToList();
@@ -31,6 +32,7 @@ namespace EASHLWebApp.Controllers
             return Content(json, "application/json");
         }
         // GET: Posts/Details/5
+        [Route("Posts/{id}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
